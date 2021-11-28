@@ -1,0 +1,27 @@
+html,
+body {
+  background-color: rgb(23, 22, 22);
+  color: rgb(232, 228, 228);
+}
+
+a,
+a:hover {
+  text-decoration: none;
+  color: inherit;
+}
+
+.body-wrapper {
+  display: block;
+  width: 100%;
+  margin-top: 5%;
+}
+
+.newPostBtn {
+  height: 60px !important;
+  width: 60px !important;
+  border-radius: 50%;
+}
+
+.bi {
+  font-size: 1.7rem !important;
+}
