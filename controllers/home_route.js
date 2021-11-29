@@ -1,6 +1,6 @@
 // home page shows all posts
 const router = require("express").Router();
-const { Comment, Post, User } = require("../models");
+const {Posts, User } = require("../models");
 
 // / routes
 
@@ -24,7 +24,6 @@ router.get("/", async (req, res) => {
   }
 });
 
-module.exports = router;
 
 router.get("/login", (req, res) => {
   if (req.session.loggedIn) {
@@ -44,32 +43,34 @@ router.get("/signup", (req, res) => {
   res.render("signup");
 });
 
-router.get("/post/:id", async (req, res) => {
-  try {
-    const dbPostData = await Post.findByPk(req.params.id, {
-      include: [
-        {
-          model: Comment,
-          include: [
-            {
-              model: User,
-              attributes: ["username", "id"],
-            },
-          ],
-        },
-        {
-          model: User,
-          attributes: ["username", "id"],
-        },
-      ],
-    });
-    const post = dbPostData.get({ plain: true });
-    res.render("single-post", {
-      ...post,
-      loggedIn: req.session.loggedIn,
-    });
-  } catch (err) {
-    console.log(err);
-    res.status(500).json(err);
-  }
-});
+// router.get("/post/:id", async (req, res) => {
+//   try {
+//     const dbPostData = await Post.findByPk(req.params.id, {
+//       include: [
+//         {
+//           model: Comment,
+//           include: [
+//             {
+//               model: User,
+//               attributes: ["username", "id"],
+//             },
+//           ],
+//         },
+//         {
+//           model: User,
+//           attributes: ["username", "id"],
+//         },
+//       ],
+//     });
+//     const post = dbPostData.get({ plain: true });
+//     res.render("single-post", {
+//       ...post,
+//       loggedIn: req.session.loggedIn,
+//     });
+//   } catch (err) {
+//     console.log(err);
+//     res.status(500).json(err);
+//   }
+// });
+
+module.exports = router;
