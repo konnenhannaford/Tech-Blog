@@ -1,6 +1,6 @@
 // home page shows all posts
 const router = require("express").Router();
-const {Posts, User } = require("../models");
+const {Posts, Users } = require("../models");
 
 // / routes
 
@@ -9,7 +9,7 @@ router.get("/", async (req, res) => {
     const dbPostData = await Post.findAll({
       include: [
         {
-          model: User,
+          model: Users,
         },
       ],
     });
@@ -51,14 +51,14 @@ router.get("/signup", (req, res) => {
 //           model: Comment,
 //           include: [
 //             {
-//               model: User,
-//               attributes: ["username", "id"],
+//               model: Users,
+//               attributes: ["Username", "id"],
 //             },
 //           ],
 //         },
 //         {
-//           model: User,
-//           attributes: ["username", "id"],
+//           model: Users,
+//           attributes: ["Username", "id"],
 //         },
 //       ],
 //     });

@@ -1,0 +1,41 @@
+<!-- Loop over each object in the articles array -->
+{{#each articles as |article| }}
+
+<div class="card mb-2">
+            <div class="card-body ms-3">
+                
+              <h5 class="card-title bg-primary text-light p-3"><a class='text-light' href="/articles/{{id}}">{{article.title}}</a></h5>
+              <div class="card-header">
+                Posted by {{user.user_name}} on {{format_date article.createdAt}}
+              </div>
+              <p class="card-text ps-4 pt-4">{{article.content}}</p>
+            </div>
+          </div>
+{{/each}}
+
+
+{{!-- homework --}}
+<!-- Loop over each object in the projects array -->
+{{#each post as | post| }}
+<div class="row mb-4 project">
+  <div class="col-md-5">
+    <h2>
+      <!-- Call helper function with triple brackets to render the emoji span as HTML -->
+      {{{get_emoji}}}
+      <a href="/project/{{project.id}}">{{project.name}}</a>
+    </h2>
+    <p>
+      <span for="img" aria-label="money">💲</span>
+      <!-- Pass needed_funding value to the helper function -->
+      <span class="dollar-amount">{{format_amount project.needed_funding}}</span>
+      needed!
+    </p>
+    <p>Created by {{project.user.name}} on {{format_date project.date_created}}</p>
+  </div>
+  <div class="col-md-7">
+    <p>
+      {{project.description}}
+    </p>
+  </div>
+</div>
+{{/each}}

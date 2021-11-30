@@ -1,22 +1,31 @@
+
+
 <!DOCTYPE html>
-<html lang="en">
-<head>
+<html lang="en-US">
+
+  <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="./styles.css">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-wEmeIV1mKuiNpC+IOBjI7aAzPcEZeedi5yW5f2yOq55WWLwNGmvvx4Um1vskeMj0" crossorigin="anonymous">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <title>Tech Blog</title>
-</head>
-{{!-- homework --}}
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.3/css/bulma.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Permanent+Marker&family=Poiret+One&family=Raleway&display=swap" rel="stylesheet">    
+    <link rel="stylesheet" type="text/css" href="css/landing.css"> 
+  </head>
 <body>
-  <div class="flex-column justify-space-around">
-    <header class="display-flex justify-space-between align-center p-2">
-      <h1>
-        <span role="img" aria-label="money">💸</span>
-        <a href="/">Tech Blog</a>
-      </h1>
-        <nav>
+
+      <nav class="navbar" role="navigation" aria-label="main navigation">
+        <div id="navbarBasicExample" class="navbar-menu">
+            <div class="navbar-start">
+                {{!-- <a class="navbar-item" href="home.html">
+                Dash
+                </a>  
+                <a class="navbar-item" href="portfolio.html">
+                sign up
+                </a>
+                <a class="navbar-item" href="contact.html">
+                login
+                </a>   --}}
             <!-- Conditionally render login or logout links -->
             {{#if logged_in}}
             <a href="/profile">profile</a> |
@@ -24,8 +33,21 @@
             {{else}}
             <a href="/login">login</a>
             {{/if}}
-        </nav>
-    </header>
+            </div>        
+        </div>
+    </nav>
+
+
+{{!-- add image or logo to the card?
+    <div class="card landing">
+      <div class="card-content">
+        <figure>
+          {{!-- <img class="sitelogo" src="images/site logo.png"> --}}
+        </figure >
+ {{!-- add buttons to login --}}
+      </div>
+    </div> --}}
+
     <main class="container container-fluid mt-5">
       <!-- Render the sub layout -->
       {{{ body }}}
@@ -36,6 +58,7 @@
   {{#if logged_in}}
   <script src="/logout.js"></script>
   {{/if}}
-</body>
+    
+    </body>
 
 </html>
