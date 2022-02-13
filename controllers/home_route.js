@@ -1,19 +1,20 @@
-// home page shows all posts
+
 const router = require("express").Router();
-const {Posts, Users } = require("../models");
+const {Posts, Users, Commenting } = require("../models");
+const withAuth = require("../utils/auth");
 
 // / routes
 
 router.get("/", async (req, res) => {
   try {
-    const dbPostData = await Post.findAll({
+    const posting = await Post.findAll({
       include: [
         {
           model: Users,
         },
       ],
     });
-    const posts = dbPostData.map((post) => post.get({ plain: true }));
+    const posts = posting.map((post) => post.get({ plain: true }));
     res.render("homepage", {
       posts,
       loggedIn: req.session.loggedIn,
@@ -43,34 +44,5 @@ router.get("/signup", (req, res) => {
   res.render("signup");
 });
 
-// router.get("/post/:id", async (req, res) => {
-//   try {
-//     const dbPostData = await Post.findByPk(req.params.id, {
-//       include: [
-//         {
-//           model: Comment,
-//           include: [
-//             {
-//               model: Users,
-//               attributes: ["Username", "id"],
-//             },
-//           ],
-//         },
-//         {
-//           model: Users,
-//           attributes: ["Username", "id"],
-//         },
-//       ],
-//     });
-//     const post = dbPostData.get({ plain: true });
-//     res.render("single-post", {
-//       ...post,
-//       loggedIn: req.session.loggedIn,
-//     });
-//   } catch (err) {
-//     console.log(err);
-//     res.status(500).json(err);
-//   }
-// });
 
 module.exports = router;
