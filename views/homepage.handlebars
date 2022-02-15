@@ -1,22 +1,21 @@
-<!-- Loop over each object in the articles array -->
-{{#each articles as |article| }}
+{{#each posts as |post| }}
 
 <div class="card mb-2">
-            <div class="card-body ms-3">
-                
-              <h5 class="card-title bg-primary text-light p-3"><a class='text-light' href="/articles/{{id}}">{{article.title}}</a></h5>
-              <div class="card-header">
-                Posted by {{user.user_name}} on {{format_date article.createdAt}}
-              </div>
-              <p class="card-text ps-4 pt-4">{{article.content}}</p>
-            </div>
-          </div>
+  <div class="card-body ms-3">
+    
+  <h5 class="card-title bg-primary text-light p-3"><a class='text-light' href="/post/{{id}}">{{post.title}}</a></h5>
+  <div class="card-header">
+    Posted by {{user.user_name}} on {{format_date post.createdAt}}
+  </div>
+  <p class="card-text ps-4 pt-4">{{post.content}}</p>
+  </div>
+  </div>
 {{/each}}
 
 
 {{!-- homework --}}
 <!-- Loop over each object in the projects array -->
-{{#each post as | post| }}
+{{#each posts as | post| }}
 <div class="row mb-4 project">
   <div class="col-md-5">
     <h2>
