@@ -29,3 +29,9 @@ Posting.init(
 );
 
 module.exports = Posting;
+
+
+
+
+
+

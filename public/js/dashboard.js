@@ -1,5 +1,3 @@
-const { post } = require("../../controllers");
-const { create } = require("../../models/Users");
 
 // commrnt     commrnt      comment
 // join    
@@ -40,7 +38,8 @@ const { create } = require("../../models/Users");
         if (event.target.hasAttribute('data-id')) {
           const id = event.target.getAttribute('data-id');
       
-          const response = await fetch(`/api/posts/${id}`, {
+          const response = await fetch(`/api/post
+          /${id}`, {
             method: 'DELETE',
           });
       
@@ -60,3 +59,15 @@ const { create } = require("../../models/Users");
         .querySelector('.new-blog-form')
         .addEventListener('submit', delPostHandler);
       
+
+
+
+
+
+
+
+
+
+
+
+        

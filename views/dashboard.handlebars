@@ -1,10 +1,50 @@
-  <div class="card">
-        <div class="card-body ms-3">
-            <h5 class="card-title">Dashboard</h5>
-            </form>
-        </div>
-    </div>
+<div class="row">
+  <div class="col-auto">
+    <h2 class= "question">Welcome {{name}}!, What tech question is on your mind?</h2>
+  </div>
+</div>
 
-    <script src='./dashboard.js'></script>
+<div class="row mt-4">
+  <div class="col-md-6">
 
-    
+    <form class="form new-post-form">
+      <div class="form-group row">
+        <label for="post-title">post title:</label>
+        <input class="form-control" type="text" id="post-title" name="post-title" />
+      </div>
+
+      <div class="form-group row">
+        <label for="post-desc">description:</label>
+        <textarea class="form-control" id="post-desc" name="post-desc"></textarea><br>
+      </div>
+
+      <div class="buttonHolder">
+        <button type="submit" class="btn btn-primary">Create</button>
+      </div>
+    </form>
+  </div>
+
+  {{#if post.length}}
+  <div class="col-md-6 post-list">
+    <h3 class="postTitle">You have created {{post.length}} post:</h3>
+
+    {{#each post 
+    as |post|}}
+    <div class="row post">
+      <a href="/post/{{post.id}}">
+      <div class="col-md-8">
+        <h4 class = 'postTitle'>{{post.title}}
+          <button class="btn btn-sm btn-danger" data-id="{{post.id}}">X</button>
+        </h4>
+        <p class ="postDesc">{{post.description}}</p>
+        <p>On {{format_date post.date_created}}</p>
+      </div>
+      </a>
+      </div>
+
+    {{/each}}
+  </div>
+  {{/if}}
+</div>
+
+<script src="/js/dashboard.js"></script>

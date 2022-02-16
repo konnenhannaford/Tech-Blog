@@ -1,6 +1,6 @@
 
 const router = require("express").Router();
-const {Posts, Users, Commenting } = require("../models");
+const {Post, Users, Commenting } = require("../models");
 const withAuth = require("../utils/auth");
 
 // / routes
@@ -14,9 +14,9 @@ router.get("/", async (req, res) => {
         },
       ],
     });
-    const posts = posting.map((post) => post.get({ plain: true }));
+    const post = posting.map((post) => post.get({ plain: true }));
     res.render("homepage", {
-      posts,
+      post,
       loggedIn: req.session.loggedIn,
     });
   } catch (err) {
@@ -46,3 +46,16 @@ router.get("/signup", (req, res) => {
 
 
 module.exports = router;
+
+
+
+
+
+
+
+
+
+
+
+
+

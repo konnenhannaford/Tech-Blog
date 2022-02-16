@@ -27,8 +27,9 @@ a:hover {
 }
  */
 
- html { 
-  background-image: url("../images/white.jpeg");
+ body { 
+  background-image: url("white.jpeg");
+  /* background-color: #76a8fc !important; */
   background-size:cover;
   background-attachment: fixed;
   background-position: center;
@@ -57,7 +58,7 @@ body{
 
 .navbar {
   font-family: 'Raleway', sans-serif;
-  background-color: transparent;
+  background-color: pink;
   align-content: center;
   
 }
@@ -118,3 +119,110 @@ p {
 .navbar-burger {
     display:list-item
 }
+
+
+.form {
+  background-color: transparent;
+  border-radius: 45px;
+  display: block;
+  height: 100%;
+  width: 75%;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: auto;
+  margin-top: auto;
+  margin-left: auto;
+  margin-right: auto;
+  backdrop-filter: blur(10px);
+  font-family: 'Raleway', sans-serif;
+  text-align: center; 
+  animation: fadeIn 10s;
+  -webkit-animation: fadeIn 10s;
+  -moz-animation: fadeIn 10s;
+  -o-animation: fadeIn 10s;
+  -ms-animation: fadeIn 10s;
+}
+/* @keyframes fadeIn {
+  0% {opacity:0;}
+  100% {opacity:1;}
+}
+
+@-moz-keyframes fadeIn {
+  0% {opacity:0;}
+  100% {opacity:1;}
+}
+
+@-webkit-keyframes fadeIn {
+  0% {opacity:0;}
+  100% {opacity:1;}
+}
+
+@-o-keyframes fadeIn {
+  0% {opacity:0;}
+  100% {opacity:1;}
+}
+
+@-ms-keyframes fadeIn {
+  0% {opacity:0;}
+  100% {opacity:1;}
+}
+ */
+
+.about-me-header {
+  color: #ee8982;
+  font-size: 40px;
+  text-align: center; 
+  font-family: 'Poiret One', cursive;
+}
+
+.profile-pic {
+  width: 25%;
+  height: 50%;
+  border-radius: 20px;
+}
+
+.card {
+  animation: fadeIn 10s;
+  -webkit-animation: fadeIn 10s;
+  -moz-animation: fadeIn 10s;
+  -o-animation: fadeIn 10s;
+  -ms-animation: fadeIn 10s;
+}
+/* @keyframes fadeIn {
+  0% {opacity:0;}
+  100% {opacity:1;}
+}
+
+@-moz-keyframes fadeIn {
+  0% {opacity:0;}
+  100% {opacity:1;}
+}
+
+@-webkit-keyframes fadeIn {
+  0% {opacity:0;}
+  100% {opacity:1;}
+}
+
+@-o-keyframes fadeIn {
+  0% {opacity:0;}
+  100% {opacity:1;}
+}
+
+@-ms-keyframes fadeIn {
+  0% {opacity:0;}
+  100% {opacity:1;}
+}
+
+@media screen and (max-width: 965px) {
+  .home {
+  width: 500px;
+  text-align: center;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .home {
+  width: 300px;
+  text-align: center;
+  }
+} */

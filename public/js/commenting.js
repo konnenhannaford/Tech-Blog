@@ -54,3 +54,9 @@ const newCommentHandler = async (event) => {
     button.addEventListener("click", delCommentHandler);
   });
   
+
+
+
+
+
+  
